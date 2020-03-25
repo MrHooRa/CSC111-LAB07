@@ -60,7 +60,7 @@ public class TV {
 		int newVolume;
 		
 		// New volume
-		newVolume = volumeLevel + vol;
+		newVolume = volumeLevel - vol;
 		
 		// Check if the new Volume is more than 0!
 		if(newVolume >= 0) {
