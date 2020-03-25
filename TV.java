@@ -56,74 +56,81 @@ public class TV {
 	
 	// Method [5]: volume level Down
 	public void volumeLevelDown(int vol) {
-		
+
 		int newVolume;
-		
+
 		// New volume
 		newVolume = volumeLevel - vol;
-		
+
 		// Check if the new Volume is more than 0!
 		if(newVolume >= 0) {
 			volumeLevel = newVolume;
 		}
-		
+
 	}
-	
+
 	// Method [6]: Channel Up
 	public void channelUp(int ch) {
-		
+
 		int newChannel;
-		
+
 		// New channel
 		newChannel = channel + ch;
-		
+
 		// Check if the new channel is less than 100!
 		if(newChannel <= 100) {
 			channel = newChannel;
+		}else if (newChannel > 100) {
+			channel = newChannel - 100;
 		}
-		
+
 	}
-	
+
 	// Method [7]: Channel Down
 	public void channelDown(int ch) {
-		
+
 		int newChannel;
-		
+
 		// New channel
 		newChannel = channel - ch;
-		
+
 		// Check if the new channel is more than 0!
 		if(newChannel >= 0) {
 			channel = newChannel;
+		}else if(newChannel < 0) {
+			channel = 100 + newChannel;
 		}
-		
+
 	}
 
 	// Method [8]: Return all information about TV
 	public String toString() {
-		return "TV is " + isOn() + " and current channel is " + channel +
+		
+		// Short if!
+		String t = ((isOn() == true) ? "On" : "Off");
+		return "TV is " + t + " and current channel is " + channel +
 				" and current volume level is " + volumeLevel +".";
 	}
 
 	public static void main(String[] args) {
-		
+
 		// Create new object called tv1
 		TV tv1 = new TV();
-		
+
 		// Turn on tv1
 		tv1.turnOn();
-		
+
 		// Set channel 20
-		tv1.channelUp(20);
-		
+		tv1.channelUp(189);
+
 		// Set volume 4
 		tv1.volumeLevelUp(4);
-		
+
 		// Display info about tv1
 		if(tv1.isOn()) {
 			System.out.println(tv1.toString());
 		}
-		
+
 	}
 
 }
