@@ -10,9 +10,9 @@
 
 public class TV {
 	// Variables
-	int channel;
-	int volumeLevel;  // Should I put default Value???
-	boolean on;
+	public int channel;
+	public int volumeLevel;  // Should I put default Value???
+	public boolean on;
 	
 	// Methods
 	
@@ -26,22 +26,19 @@ public class TV {
 	public void turnOff() {
 		on = false;
 	}
-	
+
 	// Method [3]: Check if TV is on!
 	// Here we have output (Boolean)
-	public String isOn() {
-		String isTvOn;
+	public boolean isOn() {
 		
-		if(on == true) {
-			isTvOn = "On";
-		}else {
-			isTvOn = "Off";
-		}
-		
-		return isTvOn;
-		
+		// If on == true => return true
+		if(on)
+			return true;
+		else 
+			return false;
+
 	}
-	
+
 	// Method [4]: volume level Up
 	public void volumeLevelUp(int vol) {
 		
@@ -123,7 +120,7 @@ public class TV {
 		tv1.volumeLevelUp(4);
 		
 		// Display info about tv1
-		if(tv1.isOn() == "On") {
+		if(tv1.isOn()) {
 			System.out.println(tv1.toString());
 		}
 		
