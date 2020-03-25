@@ -107,6 +107,7 @@ public class TV {
 	public String toString() {
 		
 		// Short if!
+		// ( (If statement) ? IF TRUE : IF FALSE ) 
 		String t = ((isOn() == true) ? "On" : "Off");
 		return "TV is " + t + " and current channel is " + channel +
 				" and current volume level is " + volumeLevel +".";
